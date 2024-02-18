@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd3aiwlglfue0"]
+
+[ext_resource type="Texture2D" uid="uid://b3ac28aik42g2" path="res://icon.svg" id="1_yq4xt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0oh3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yq4xt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6lg8l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0442a"]
+
+[node name="Froggie" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(3.05176e-05, 3)
+scale = Vector2(15.1188, 1)
+sprite_frames = SubResource("SpriteFrames_0oh3d")
+
+[node name="Bits" type="Node2D" parent="."]
+
+[node name="LEye" type="Area2D" parent="Bits"]
+position = Vector2(343, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bits/LEye"]
+shape = SubResource("CircleShape2D_6lg8l")
+
+[node name="REye" type="Area2D" parent="Bits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bits/REye"]
+shape = SubResource("CircleShape2D_0442a")
+
+[node name="LLeg" type="Area2D" parent="Bits"]
+
+[node name="RLeg" type="Area2D" parent="Bits"]
