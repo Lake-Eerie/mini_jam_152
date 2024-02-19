@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const THROW_SPEED = 500.0
 
 const ITEM_NONE = 0
 const ITEM_SPEAR = 1
@@ -32,7 +31,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func throw(node):
-	print("Should be throwing")
 	var projectile = node.instantiate()
 	projectile.position = position + Vector2.UP * 30
 	get_parent().add_child(projectile)

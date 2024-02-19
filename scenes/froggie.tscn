@@ -1,43 +1,165 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd3aiwlglfue0"]
+[gd_scene load_steps=21 format=3 uid="uid://dd3aiwlglfue0"]
 
-[ext_resource type="Texture2D" uid="uid://b3ac28aik42g2" path="res://icon.svg" id="1_yq4xt"]
+[ext_resource type="Script" path="res://scripts/fwog.gd" id="1_j345f"]
+[ext_resource type="Texture2D" uid="uid://bhg1juga52ayt" path="res://sprites/fwog/walk/eyes/feyebroken0005.png" id="2_qx5bi"]
+[ext_resource type="Texture2D" uid="uid://bskjgxquanhtb" path="res://sprites/fwog/walk/eyes/feyebroken0006.png" id="3_3r6f0"]
+[ext_resource type="Texture2D" uid="uid://bxf0akltbx7wo" path="res://sprites/fwog/walk/eyes/feyewalk0005.png" id="4_rhhr5"]
+[ext_resource type="Texture2D" uid="uid://ceja4um5ao84x" path="res://sprites/fwog/walk/eyes/feyewalk0006.png" id="5_pei4y"]
+[ext_resource type="Texture2D" uid="uid://chodq81e2kqho" path="res://sprites/fwog/walk/eyes/feyewalk0007.png" id="6_vv7bs"]
+[ext_resource type="Texture2D" uid="uid://dnikjgyh0png3" path="res://sprites/fwog/walk/body-legs/fwalk0000.png" id="7_f6vt0"]
+[ext_resource type="Texture2D" uid="uid://bujqbfd3kg5am" path="res://sprites/fwog/walk/body-legs/fwalk0001.png" id="8_ynewf"]
+[ext_resource type="Texture2D" uid="uid://yukbd1entn0g" path="res://sprites/fwog/walk/body-legs/fwalk0002.png" id="9_yo8xo"]
+[ext_resource type="Texture2D" uid="uid://c6pfo43x6luxx" path="res://sprites/fwog/walk/body-legs/fwalk0003.png" id="10_vuprw"]
+[ext_resource type="Texture2D" uid="uid://cuoy033yvlfcb" path="res://sprites/fwog/walk/body-legs/fwalk0004.png" id="11_0csx8"]
+[ext_resource type="Texture2D" uid="uid://dofx73sniklpd" path="res://sprites/fwog/walk/body-legs/fwalk0005.png" id="12_voajf"]
+[ext_resource type="Texture2D" uid="uid://cbmewm16p8ou0" path="res://sprites/fwog/walk/body-legs/fwalk0006.png" id="13_vuai2"]
+[ext_resource type="Texture2D" uid="uid://cj1np3e2p073e" path="res://sprites/fwog/walk/body-legs/fwalk0007.png" id="14_gd451"]
+[ext_resource type="Texture2D" uid="uid://b1ejbu8pys0io" path="res://sprites/fwog/walk/mouth/fmouthwalk0005.png" id="15_453ii"]
+[ext_resource type="Texture2D" uid="uid://ct7hukovm21oo" path="res://sprites/fwog/walk/mouth/fmouthwalk0006.png" id="16_o5h27"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6lg8l"]
+radius = 77.0065
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7aas7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qx5bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3r6f0")
+}],
+"loop": true,
+"name": &"ouchie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rhhr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pei4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rhhr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pei4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rhhr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pei4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rhhr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vv7bs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0oh3d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_yq4xt")
+"texture": ExtResource("7_f6vt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ynewf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yo8xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vuprw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0csx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_voajf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vuai2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gd451")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walk",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6lg8l"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0442a"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jjd84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_453ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o5h27")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Froggie" type="Node2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 1
-position = Vector2(3.05176e-05, 3)
-scale = Vector2(15.1188, 1)
-sprite_frames = SubResource("SpriteFrames_0oh3d")
+position = Vector2(0, -1)
+script = ExtResource("1_j345f")
 
 [node name="Bits" type="Node2D" parent="."]
 
 [node name="LEye" type="Area2D" parent="Bits"]
-position = Vector2(343, 1)
+z_index = 2
+position = Vector2(-245, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bits/LEye"]
 shape = SubResource("CircleShape2D_6lg8l")
 
+[node name="ASprite" type="AnimatedSprite2D" parent="Bits/LEye"]
+position = Vector2(291, 445)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_7aas7")
+animation = &"walk"
+frame = 1
+
 [node name="REye" type="Area2D" parent="Bits"]
+z_index = 2
+position = Vector2(232, 96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bits/REye"]
-shape = SubResource("CircleShape2D_0442a")
+shape = SubResource("CircleShape2D_6lg8l")
+
+[node name="ASprite" type="AnimatedSprite2D" parent="Bits/REye"]
+position = Vector2(-289, 447)
+sprite_frames = SubResource("SpriteFrames_7aas7")
+animation = &"walk"
+frame = 1
 
 [node name="LLeg" type="Area2D" parent="Bits"]
 
 [node name="RLeg" type="Area2D" parent="Bits"]
+
+[node name="Body" type="Area2D" parent="Bits"]
+
+[node name="ASprite" type="AnimatedSprite2D" parent="Bits/Body"]
+z_index = 1
+position = Vector2(17, 541)
+sprite_frames = SubResource("SpriteFrames_0oh3d")
+animation = &"walk"
+
+[node name="Mouth" type="Area2D" parent="Bits"]
+position = Vector2(-4, 105)
+
+[node name="ASprite" type="AnimatedSprite2D" parent="Bits/Mouth"]
+z_index = 3
+position = Vector2(-9, 433)
+sprite_frames = SubResource("SpriteFrames_jjd84")
+animation = &"walk"
+frame = 1

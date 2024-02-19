@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsfi264ntg4uk"]
+[gd_scene load_steps=5 format=3 uid="uid://dsfi264ntg4uk"]
 
+[ext_resource type="Script" path="res://scripts/manager.gd" id="1_lhhsf"]
 [ext_resource type="PackedScene" uid="uid://bn2jdwobbj12s" path="res://scenes/hero.tscn" id="1_ym41u"]
 [ext_resource type="PackedScene" uid="uid://dd3aiwlglfue0" path="res://scenes/froggie.tscn" id="2_fx3r4"]
 [ext_resource type="PackedScene" uid="uid://crtoab1p3s7g3" path="res://scenes/pickup.tscn" id="3_dg5l2"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_lhhsf")
 
 [node name="hero" parent="." instance=ExtResource("1_ym41u")]
 position = Vector2(917, 540)
 
 [node name="Froggie" parent="." instance=ExtResource("2_fx3r4")]
-position = Vector2(954, 51)
+position = Vector2(943, -1)
 
 [node name="Pickup" parent="." instance=ExtResource("3_dg5l2")]
 position = Vector2(1504, 852)
