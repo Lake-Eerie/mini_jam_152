@@ -1,15 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsfi264ntg4uk"]
+[gd_scene load_steps=11 format=3 uid="uid://dsfi264ntg4uk"]
 
 [ext_resource type="Script" path="res://scripts/manager.gd" id="1_lhhsf"]
 [ext_resource type="PackedScene" uid="uid://bn2jdwobbj12s" path="res://scenes/hero.tscn" id="1_ym41u"]
 [ext_resource type="PackedScene" uid="uid://dd3aiwlglfue0" path="res://scenes/froggie.tscn" id="2_fx3r4"]
 [ext_resource type="PackedScene" uid="uid://crtoab1p3s7g3" path="res://scenes/pickup.tscn" id="3_dg5l2"]
 [ext_resource type="AudioStream" uid="uid://cc7q4u5jc87mh" path="res://audio/spear_throw.mp3" id="5_fon55"]
+[ext_resource type="AudioStream" uid="uid://14wir8en1j86" path="res://audio/gameplay.mp3" id="5_m0mmr"]
+[ext_resource type="Script" path="res://scenes/audio_controller.gd" id="6_ywv0b"]
+[ext_resource type="AudioStream" uid="uid://vfuwndetcxp8" path="res://audio/frog_entrance.mp3" id="7_7bqap"]
+
+[sub_resource type="Animation" id="Animation_kxcef"]
+resource_name = "fadeOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0so1d"]
+_data = {
+"fadeOut": SubResource("Animation_kxcef")
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lhhsf")
 
 [node name="hero" parent="." instance=ExtResource("1_ym41u")]
+visible = false
 position = Vector2(917, 540)
 
 [node name="SpearSfx" type="AudioStreamPlayer" parent="hero"]
@@ -20,3 +45,26 @@ position = Vector2(943, -1)
 
 [node name="Pickup" parent="." instance=ExtResource("3_dg5l2")]
 position = Vector2(1504, 852)
+
+[node name="Music" type="Node2D" parent="."]
+script = ExtResource("6_ywv0b")
+
+[node name="FrogEntrance" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("7_7bqap")
+autoplay = true
+
+[node name="GameplayMusic_1" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("5_m0mmr")
+
+[node name="Cutscene" type="ColorRect" parent="."]
+offset_right = 1940.0
+offset_bottom = 1101.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="FadeScreen" type="AnimationPlayer" parent="Cutscene"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_0so1d")
+}
