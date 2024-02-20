@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 
 const ITEM_NONE = 0
@@ -35,3 +34,5 @@ func throw(node):
 	projectile.position = position + Vector2.UP * 30
 	get_parent().add_child(projectile)
 	item = ITEM_NONE
+	$SpearSfx.play()
+	
