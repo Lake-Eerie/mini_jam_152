@@ -21,7 +21,6 @@ func _process(delta):
 		win()
 	elif frogRemaining <= 0:
 		lose_time()
-	
 
 func best_win():
 	pass

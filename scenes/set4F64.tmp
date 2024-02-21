@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbo8dh7uxbiiw"]
+
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_vj1cl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72pbt"]
+bg_color = Color(0.380392, 0.654902, 0.709804, 1)
+
+[node name="SettingsMenu" type="Panel"]
+visible = false
+z_index = 10
+offset_right = 1924.0
+offset_bottom = 1083.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_72pbt")
+script = ExtResource("1_vj1cl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 400.0
+offset_right = 400.0
+offset_bottom = 1200.0
+grow_horizontal = 2
+
+[node name="SoundVolumeSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Hey?"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ApplyButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Apply"
+
+[node name="CloseButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Close"

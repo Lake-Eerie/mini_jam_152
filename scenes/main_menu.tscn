@@ -1,15 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://bevt6yi3b6474"]
+[gd_scene load_steps=9 format=3 uid="uid://bevt6yi3b6474"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_77vwu"]
 [ext_resource type="AudioStream" uid="uid://hctqfdfw02y8" path="res://audio/title_screen.mp3" id="2_tyu88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d70ca"]
 bg_color = Color(0.486275, 0.65098, 0.505882, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcyw0"]
+bg_color = Color(0.168627, 0.486275, 0.333333, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y37xn"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h32a"]
+bg_color = Color(0.756863, 0.756863, 0.756863, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5an78"]
 bg_color = Color(1, 0.168627, 0.286275, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo22j"]
+bg_color = Color(0.580392, 0, 0.129412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_77vwu")
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]
@@ -41,19 +75,21 @@ alignment = 1
 clip_contents = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_d70ca")
 theme_override_styles/hover = SubResource("StyleBoxFlat_d70ca")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_d70ca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gcyw0")
 text = "Start Game"
 
 [node name="QuitButton" type="Button" parent="ButtonsContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_y37xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y37xn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_y37xn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5h32a")
 text = "Quit Game
 "
 
@@ -61,10 +97,11 @@ text = "Quit Game
 clip_contents = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_5an78")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5an78")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5an78")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oo22j")
 text = "Settings"
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]

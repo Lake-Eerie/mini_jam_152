@@ -1,6 +1,7 @@
 extends Control
 
-var scene = preload("res://scenes/main.tscn")
+var game_scene = preload("res://scenes/main.tscn")
+var settings_scene = preload("res://scenes/settings.tscn")
 
 var fade_out_started = false
 var fade_out_time = 2.0 # Duration of the fade in seconds
@@ -18,7 +19,9 @@ func _on_StartButton_pressed():
 	start_fade_out()
 
 func _on_SettingsButton_pressed():
-	print("Settings Button Pressed")
+	var settings = settings_scene.instantiate()
+	get_parent().add_child(settings)
+	settings.add_to_group("settings")
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
@@ -32,8 +35,8 @@ func _process(delta):
 		var progress = fade_out_timer / fade_out_time
 		$MainMenuMusic.volume_db = lerp(start_volume_db, target_volume_db, progress)
 		
-		# finished audio fade
+		# Finished audio fade
 		if progress >= 1.0:
 			fade_out_started = false
 			$MainMenuMusic.stop()
-			get_tree().change_scene_to_packed(scene)
+			get_tree().change_scene_to_packed(game_scene)

@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _ready():
 	$FrogEntrance.connect("finished", Callable(self, "_on_CutsceneAudio_finished"))
 
