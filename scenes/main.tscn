@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsfi264ntg4uk"]
+[gd_scene load_steps=11 format=3 uid="uid://dsfi264ntg4uk"]
 
 [ext_resource type="Script" path="res://scripts/manager.gd" id="1_lhhsf"]
 [ext_resource type="PackedScene" uid="uid://bn2jdwobbj12s" path="res://scenes/hero.tscn" id="1_ym41u"]
@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://14wir8en1j86" path="res://audio/gameplay.mp3" id="5_m0mmr"]
 [ext_resource type="Script" path="res://scenes/audio_controller.gd" id="6_ywv0b"]
 [ext_resource type="AudioStream" uid="uid://vfuwndetcxp8" path="res://audio/frog_entrance.mp3" id="7_7bqap"]
-[ext_resource type="PackedScene" uid="uid://bevt6yi3b6474" path="res://scenes/main_menu.tscn" id="9_4hbmd"]
 
 [sub_resource type="Animation" id="Animation_kxcef"]
 resource_name = "fadeOut"
@@ -75,6 +74,3 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_0so1d")
 }
-
-[node name="MainMenu" parent="." instance=ExtResource("9_4hbmd")]
-layout_mode = 1

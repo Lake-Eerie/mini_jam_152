@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bevt6yi3b6474"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_77vwu"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_64hvx"]
 [ext_resource type="AudioStream" uid="uid://hctqfdfw02y8" path="res://audio/title_screen.mp3" id="2_tyu88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d70ca"]
@@ -52,7 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_77vwu")
+script = ExtResource("1_64hvx")
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(672.2, 0)
