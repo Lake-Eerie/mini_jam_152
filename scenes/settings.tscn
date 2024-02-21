@@ -29,7 +29,6 @@ grow_horizontal = 2
 
 [node name="SoundVolumeSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-tooltip_text = "Hey?"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2

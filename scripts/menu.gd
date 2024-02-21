@@ -20,7 +20,7 @@ func _on_StartButton_pressed():
 
 func _on_SettingsButton_pressed():
 	var settings = settings_scene.instantiate()
-	get_parent().add_child(settings)
+	add_child(settings)
 	settings.add_to_group("settings")
 
 func _on_QuitButton_pressed():
